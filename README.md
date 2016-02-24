@@ -1,7 +1,7 @@
 Promise Rationing
 =================
 
-Promises are quite useful, but `Promise.all()` executes all promises in parallel, which is fine most of the time, but sometimes there are scarce resources that need to rationed (such as file descriptors, database connections, et cetera).
+Promises are quite useful, but `Promise.all()` executes all promises in parallel, which is fine a lot of the time, but sometimes there are scarce resources that need to rationed (such as file descriptors, database connections, et cetera).
 
 The `promise-rationing` library provides a familiar API to execute promise-compatible functions as promises, while limiting the number of concurrent functions running.
 
@@ -12,6 +12,15 @@ A promise requires a function which takes in two functions, a `resolve` function
 The returned object from `.all()` is a completely bona fide `Promise`, which can then be `.then`-ed and such.
 
 **NOTE:** Why must we pass in a function and not a promise? Once a promise is created it begins executing immediately, which is what is trying to be prevented.
+
+
+Install
+-------
+
+```
+npm install promise-rationing
+```
+
 
 Example: Waiters
 ----------------
